@@ -20,4 +20,4 @@ g <- ggplotly(p, tooltip = c("x","y","colour")) %>%
          legend = (list(orientation = "v")
          ))
 
-g
+print(g)
