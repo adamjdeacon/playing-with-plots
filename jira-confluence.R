@@ -1,10 +1,11 @@
 library(readr)
+library(ggplot2)
 
 d <- read_delim('./performance.txt', delim=" ", col_types = cols(
   time = col_time(format = "%H:%M:%S")
 ))
 
-d$cpu <- as.numeric(a$cpu)
+d$cpu <- as.numeric(d$cpu)
 
 g <- ggplot(data=d, aes(x=time, y=cpu, group=process, color=process)) +
   geom_line(size=0.5) + 
